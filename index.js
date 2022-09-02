@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const { default: axios } = require('axios');
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -11,7 +12,12 @@ try {
   core.setOutput("result", "ok")
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log('curent pr',JSON.stringify(github.context.payload.pull_request.self));
+  axios.get(' https://api.github.com/repos/paymongo/dashboard-web/pulls/1351', {
+    headers: {
+      Authorization: `Bearer ${tok}`
+    }
+  }).then((res) => console.log({ res }));
+  console.log('curent pr',JSON.stringify(github.context.payload.pull_request.self.href));
   // console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
