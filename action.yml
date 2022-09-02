@@ -11,10 +11,10 @@ inputs:
     default: ${{ github.event.pull_request }}
   reviewer-count:
     description: 'How many per team'
-    required: true
+    required: false
     default: '0'
 outputs:
-  result: # result of output
+  result:
     description: 'The result'
 runs:
   using: 'node16'
