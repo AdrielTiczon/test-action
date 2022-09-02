@@ -17,7 +17,7 @@ try {
       Authorization: `Bearer ${tok}`
     }
   }).then((res) => console.log({ res }));
-  console.log('curent pr',JSON.stringify(github.context.payload.pull_request.self.href));
+  console.log('curent pr',JSON.parse(payload));
   // console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
