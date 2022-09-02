@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: adrielticzon/gh-action@v1
+      uses: adrielticzon/gh-action@v2
       with:
         who-to-greet: 'Ania'
     # Use the output from the `hello` step
