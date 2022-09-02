@@ -5,6 +5,10 @@ inputs:
     description: 'Who to greet'
     required: false
     default: 'World'
+  gh-token:
+    required: false
+    description: The GitHub token used to create an authenticated client.  Defaults to github provided token.
+    default: ${{ github.token }}
 outputs:
   time: # id of output
     description: 'The time we greeted you'
