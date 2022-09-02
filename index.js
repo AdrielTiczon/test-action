@@ -5,8 +5,9 @@ try {
   // `who-to-greet` input defined in action metadata file
   const tok = core.getInput('gh-token');
   const info = core.getInput('gh-pr-info');
+  const count = core.getInput('reviewer-count');
   // const nameToGreet = core.getInput('gh-token');
-  console.log({ tok, info })
+  console.log({ tok, info, count })
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
