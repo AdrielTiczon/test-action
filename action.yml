@@ -5,10 +5,6 @@ inputs:
     required: false
     description: 'yes'
     default: ${{ github.token }}
-  gh-pr-info:
-    required: false
-    description: 'huh'
-    default: ${{ github.event.pull_request }}
   reviewer-count:
     description: 'How many per team'
     required: false
