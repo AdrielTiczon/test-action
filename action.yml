@@ -1,17 +1,13 @@
-name: 'Aj github action'
-description: 'Aj sample gh action'
+name: 'Hello World'
+description: 'Greet someone and record the time'
 inputs:
-  gh-token:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
     required: false
-    description: 'yes'
-    default: ${{ github.token }}
-  reviewer-count:
-    description: 'How many per team'
-    required: false
-    default: '0'
+    default: 'World'
 outputs:
-  result:
-    description: 'The result'
+  time: # id of output
+    description: 'The time we greeted you'
 runs:
   using: 'node16'
   main: 'index.js'
